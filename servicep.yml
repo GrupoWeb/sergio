@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: semestre
+  labels:
+    app.kubernetes.io/name: semestre
+    app.kubernetes.io/part-of: semestre
+  annotations:
+    metallb.universe.tf/address-pool: production-public-ips
+spec:
+  type: LoadBalancer
+  externalIPs:
+  - 168.232.79.93
+  selector:
+    run: semestre
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+      protocol: TCP
+    # - name: https
+    #   port: 443
+    #   targetPort: 443
+    #   protocol: TCP

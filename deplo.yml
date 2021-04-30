@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: semestre
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: semestre
+  template:
+    metadata:
+      labels:
+        run: semestre
+    spec:
+      containers:
+      - name: semestreApp
+        image: umg-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 80
+            protocol: TCP
+          # - containerPort: 443
+          #   protocol: TCP
+        volumeMounts:
+            - mountPath: "/var/www/html"
+              name: vol-semestre
+      volumes:
+        - name: vol-semestre
+          persistentVolumeClaim:
+            claimName: semestre-volumen
