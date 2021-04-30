@@ -13,7 +13,7 @@ spec:
         run: semestre
     spec:
       containers:
-      - name: semestreApp
+      - name: semestreapp
         image: umg-app:latest
         imagePullPolicy: IfNotPresent
         ports:
