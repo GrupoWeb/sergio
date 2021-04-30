@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: wordpress-mysql
   labels:
-    app: wordpress
+    app: semestre
 spec:
   selector:
     matchLabels:
-      app: wordpress
+      app: semestre
       tier: mysql
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: wordpress
+        app: semestre
         tier: mysql
     spec:
       containers:
