@@ -1,21 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: mysql-deployment
   labels:
-    app: semestre
+    app: mysql
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: semestre
-      tier: mysql
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        app: semestre
-        tier: mysql
+      app: mysql
+    template:
+      metadata:
+        labels:
+          app: mysql
     spec:
       containers:
       - image: umg-mysql:latest
@@ -27,7 +24,6 @@ spec:
             value: password
         ports:
         - containerPort: 3306
-          name: mysql
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: "/var/lib/mysql"
