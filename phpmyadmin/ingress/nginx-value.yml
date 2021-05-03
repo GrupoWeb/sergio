@@ -1,0 +1,5 @@
+controller:
+  service:
+    type: NodePort
+    externalIPs:
+    - 168.232.79.94
