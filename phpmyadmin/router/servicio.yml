@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  namespace: galera-cluster
   name: mariadb-galera
 spec:
   podManagementPolicy: OrderedReady
