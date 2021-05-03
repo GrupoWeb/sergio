@@ -1,0 +1,122 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  namespace: galera-cluster
+  name: mariadb-galera
+spec:
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb-galera
+  serviceName: mariadb-galera
+  template:
+    metadata:
+      labels:
+        app: mariadb-galera
+    spec:
+      restartPolicy: Always
+      securityContext:
+        fsGroup: 1001
+        runAsUser: 1001
+      containers:
+      - command:
+        - bash
+        - -ec
+        - |
+          # Bootstrap from the indicated node
+          NODE_ID="${MY_POD_NAME#"mariadb-galera-"}"
+          if [[ "$NODE_ID" -eq "0" ]]; then
+              export MARIADB_GALERA_CLUSTER_BOOTSTRAP=yes
+              export MARIADB_GALERA_FORCE_SAFETOBOOTSTRAP=no
+          fi
+          exec /opt/bitnami/scripts/mariadb-galera/entrypoint.sh /opt/bitnami/scripts/mariadb-galera/run.sh
+        env:
+        - name: MY_POD_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.name
+        - name: BITNAMI_DEBUG
+          value: "false"
+        - name: MARIADB_GALERA_CLUSTER_NAME
+          value: galera
+        - name: MARIADB_GALERA_CLUSTER_ADDRESS
+          value: gcomm://mariadb-galera.galera-cluster
+        - name: MARIADB_ROOT_PASSWORD
+          value: root@123
+        - name: MARIADB_DATABASE
+          value: my_database
+        - name: MARIADB_GALERA_MARIABACKUP_USER
+          value: mariabackup
+        - name: MARIADB_GALERA_MARIABACKUP_PASSWORD
+          value: root@123
+        - name: MARIADB_ENABLE_LDAP
+          value: "no"
+        - name: MARIADB_ENABLE_TLS
+          value: "no"
+        image: docker.io/bitnami/mariadb-galera:10.4.13-debian-10-r23
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - bash
+            - -ec
+            - |
+              exec mysqladmin status -uroot -p$MARIADB_ROOT_PASSWORD
+          failureThreshold: 3
+          initialDelaySeconds: 120
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: mariadb-galera
+        ports:
+        - containerPort: 3306
+          name: mysql
+          protocol: TCP
+        - containerPort: 4567
+          name: galera
+          protocol: TCP
+        - containerPort: 4568
+          name: ist
+          protocol: TCP
+        - containerPort: 4444
+          name: sst
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - bash
+            - -ec
+            - |
+              exec mysqladmin status -uroot -p$MARIADB_ROOT_PASSWORD
+          failureThreshold: 3
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        volumeMounts:
+        - mountPath: /opt/bitnami/mariadb/.bootstrap
+          name: previous-boot
+        - mountPath: /bitnami/mariadb
+          name: data
+        - mountPath: /opt/bitnami/mariadb/conf
+          name: mariadb-galera-config
+      volumes:
+      - emptyDir: {}
+        name: previous-boot
+      - configMap:
+          defaultMode: 420
+          name: my.cnf
+        name: mariadb-galera-config
+  volumeClaimTemplates:
+  - apiVersion: v1
+    metadata:
+      name: data
+    spec:
+      storageClassName: openebs-hostpath
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 20Gi

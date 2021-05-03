@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-router
+  namespace: mysql-router
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: mysql-router
+  template:
+    metadata:
+      labels:
+        app: mysql-router
+        version: v1
+    spec:
+      containers:
+      - name: mysql-router
+        image: mysql/mysql-router
+        env:
+        - name: MYSQL_HOST
+          value: "mariadb-galera.galera-cluster"
+        - name: MYSQL_PORT
+          value: "3306"
+        - name: MYSQL_USER
+          value: "root"
+        - name: MYSQL_PASSWORD
+          value: "root@123"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3306
