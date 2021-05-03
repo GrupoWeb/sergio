@@ -29,11 +29,15 @@ kind: PersistentVolumeClaim
 metadata:
   name: mysql-data-disk
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
+  selector:
+    matchLabels:
+      mysql: ready
 ---
 apiVersion: apps/v1
 kind: Deployment
