@@ -8,6 +8,23 @@ data:
   ROOT_PASSWORD: c3VwZXItc2VjcmV0LXBhc3N3b3Jk
 ---
 apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-data-disk
+  labels:
+    mysql: ready
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: 168.232.79.90
+    path: "/home/db"
+
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-data-disk
