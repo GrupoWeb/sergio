@@ -20,6 +20,7 @@ spec:
       containers:
       - image: umg-mysql:5.6
         name: mysql
+        imagePullPolicy: IfNotPresent
         env:
           # Use secret in real usage
           - name: MYSQL_ROOT_PASSWORD
