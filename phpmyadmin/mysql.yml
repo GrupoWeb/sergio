@@ -58,6 +58,7 @@ spec:
       containers:
         - name: mysql
           image: umg-mysql:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3306
           volumeMounts:
