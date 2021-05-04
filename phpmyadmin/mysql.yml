@@ -46,7 +46,7 @@ metadata:
   labels:
     app: mysql
 spec:
-  replicas: 
+  replicas: 3
   selector:
     matchLabels:
       app: mysql
