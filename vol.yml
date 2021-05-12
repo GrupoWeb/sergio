@@ -12,7 +12,7 @@ spec:
     - ReadWriteOnce
   nfs:
     server: 168.232.79.90
-    path: "/home/proyecto"
+    path: "/home/sergio/umgDB2-master"
 
 ---
 apiVersion: v1
