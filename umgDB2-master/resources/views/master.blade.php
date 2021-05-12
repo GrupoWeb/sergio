@@ -5,7 +5,7 @@
 @endsection
 
 @section('logo')
-    <img src= "img/logo.png" class="logo" alt="">
+    <img src= "img/logo2.png" class="logo" alt="">
 @endsection
 
 @section('Title')
