@@ -32,7 +32,7 @@ function CreateSQL(form) {
                             if (willDelete) {
 
                                 // Iniciar('../resources/views/menu/mDato.blade.php','Grupo 2');
-                                var url = "http://157.230.161.41/mDatos";
+                                var url =  "/mDatos";
                                 $(location).attr('href', url);
 
                             }
@@ -49,7 +49,8 @@ function CreateSQL(form) {
                             if (willDelete) {
 
                                 // Iniciar('../resources/views/menu/mDato.blade.php','Grupo 2');
-                                var url = "http://157.230.161.41/mDatos";
+                                var url = "/mDatos";
+                                // var url = "http://157.230.161.41/mDatos";
                                 $(location).attr('href', url);
 
                             }
@@ -86,7 +87,8 @@ function CreateDDL(form) {
                     .then((willDelete) => {
                         if (willDelete) {
                             // Iniciar('../resourcmDato.blade.php','Grupo 2');
-                            var url = "http://157.230.161.41/dDatos";
+                            // var url = "http://157.230.161.41/dDatos";
+                            var url = "/dDatos";
                             $(location).attr('href', url);
 
                         }

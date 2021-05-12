@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
 
 //Rutas Predeterminadas del Menu
 
-Route::get('/','MenuController@index');
+Route::get('/','MenuController@index')->name("/");
 Route::get('/rDatos','MenuController@rDato');
 Route::get('/mDatos','MenuController@mDato');
 Route::get('/dDatos','MenuController@dDato');
