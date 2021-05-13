@@ -45,7 +45,7 @@
         <div class="sidebar-fixed position-fixed ">
 
             <a class="caja-logo waves-effect" onClick="Iniciar('view/main.php','Dashboard')">
-                <img src= "img/logo2.png" class="logo" alt="">
+                <img src= "img/logo.png" class="logo" alt="">
             </a>
 
             <div class="list-group list-group-flush" id="menu">

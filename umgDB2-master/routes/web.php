@@ -19,7 +19,9 @@ use Illuminate\Http\Request;
 
 //Rutas Predeterminadas del Menu
 
-Route::get('/','MenuController@index')->name("/");
+
+Route::get('/','Auth\LoginController@showLoginForm')->name("/");
+Route::get('/dashboard','MenuController@index')->name("/dashboard");
 Route::get('/rDatos','MenuController@rDato');
 Route::get('/mDatos','MenuController@mDato');
 Route::get('/dDatos','MenuController@dDato');
@@ -68,3 +70,7 @@ Route::get('DclController/get/databases', 'DclController@getDatabases');
 Route::get('DclController/get/users', 'DclController@getUsers');
 Route::post('Dcl', 'DclController@execdcl');
 //DCL END
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

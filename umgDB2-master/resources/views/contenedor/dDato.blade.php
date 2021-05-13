@@ -2,7 +2,7 @@
        <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
             <div class="card mb-8">
                 <div class="card-header text-left">
-                    DefiniciÃ³n de Datos 
+                    Definición de Datos 
                 </div>
                     <div class="card-body">
                         <!-- <canvas id="pieChart"></canvas> -->
@@ -54,7 +54,7 @@
     <script>
             $(document).ready(function(){
                 CreateDDL('#create');
-                // llenarCombos('model/php/comboCapacitaciones.php', '#showTables', 'idCapacitacion', 'descripcion')
+
 
                 $('#resultado').hide();
             })

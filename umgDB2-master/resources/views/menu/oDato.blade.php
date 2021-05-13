@@ -40,14 +40,14 @@
     </li>
     <li>
         <a href="{{ action('MenuController@oDato') }}" id="reportes" class="list-group-item list-group-item-action active waves-effect">
-            <i class="fa fa-money mr-3"></i>Otros Grupos
+            <i class="fa fa-money mr-3"></i>Grupo
         </a>
     </li>
 </ul>
 @endsection
 
 @section('lugar')
-    Otros Grupos
+    Grupo 3
 @endsection
 
 @section('Contenido')
