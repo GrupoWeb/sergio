@@ -101,4 +101,27 @@ class controllerUmg extends Controller
 
         return response()->json($resultado, 200);
     }
+
+    public function  dml(){
+        $conexionSQL = $this->conexionInformationSchema("prueba");
+        
+        try {
+            DB::beginTransaction();
+            $sql = 'insert into pruebad (nombres) values("prueba")';
+        
+            $data2 = DB::statement($sql);
+
+            DB::commit();
+            return response()->json($data2,200);
+
+        } catch (\Throwable $th) {
+            DB::rollback();
+            return response()->json("SQL mal formado",200);
+
+        }
+              
+
+        
+    }
+
 }
