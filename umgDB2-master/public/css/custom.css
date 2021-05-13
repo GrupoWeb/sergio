@@ -1,49 +1,91 @@
-
-.logo{
-    width: 220px;
-    height: 150px;
-    max-height: 250px !important;
-    
-      }
-
-.caja-logo{
-    padding: 0.6rem;
+.color_Institucional{
+    background-color: #ff473e !important;
 }
 
-ul{
-    list-style:none;
-    }
-
-.active{
-    color:#fff !important;
+.franja{
+    background-color: #94231e !important;
 }
 
-.tabla{
-    padding-top:40px;
-    padding-bottom: 40px;
+body{
+    background-color: #ededed !important;
 }
 
-.info{
-    background: #80dfff;
+.nameF, .numberF, .formatF{
+    font-size: 2.1em;
 }
 
-.TitleFundacion{
-    color: #fff;
+.numberF{
+    color:Red;
+    font-weight: bold;
+
 }
 
-.shelf{
-    background-color: #004d99 !important;
+.now{
+    font-size: 1rem;
 }
 
-.TitleArticle{
-    background-color: #ffd11a !important; 
-    color:#000;
+.col-f{
+    margin:0;
+    padding:0;
+    border: 1px solid #000;
+    background-color: #fea;
 }
 
-.panel-body{
-    padding-left: 15px !important;
+.select_width{
+    width:100% !important;
 }
 
-.seleccion{
-    cursor: pointer;
+.total{
+    font-size: 2em;
 }
+
+/*
+.color_institucional{
+    background-color: #ff473e !important;
+}
+.sidebar{
+    background: #162947 !important;
+}
+.title_custom{
+    line-height: 40px;
+    position: relative;
+    font-size: 16px;
+    width:70%;
+    text-align: center;
+}
+.YearFiscal{
+    line-height: 40px;
+    position: relative;
+    font-size: 16px;
+    width:10%;
+    text-align: center;
+}
+.font_custom_input input{
+    font-size: 1.5em;
+    text-align:center !important;
+}
+.BarCode{
+    width: 50%;
+}
+.handler_producto {
+    width: 70%;
+    text-align: center;
+}
+.handler_fecha , .handler_bien, .handler_sistema, .handler_fisico, .handler_diferencia{
+    width: 5%;
+    text-align: center;
+}
+.handler_Barcode{
+    width: 30%;
+    text-align: center;
+}
+.handler_for_product{
+    font-size: 13px;
+    text-align: justify;
+}
+.handler_for_Barcode {
+    text-align: center;
+}
+.padding-top{
+    padding-top:180px !important;
+} */
