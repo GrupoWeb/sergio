@@ -153,6 +153,8 @@
                 <el-row :gutter="20">
                     <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12"  :offset="0">
                         <el-form-item label="Sentencia SQL">
+                            <br>
+                            <br>
                         <div class="form-group border p-2">
                             <span class="text-primary" v-if="this.form.columnas != ''">SELECT</span>
                             <span class="text-info" v-for="selectColumn of this.form.columnas">{{selectColumn}},</span>

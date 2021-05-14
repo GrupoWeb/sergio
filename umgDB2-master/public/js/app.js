@@ -24549,7 +24549,7 @@ var doFlattenColumns = function doFlattenColumns(columns) {
 
     // 适配层，expand-row-keys 在 Expand 与 TreeTable 中都有使用
     setExpandRowKeysAdapter: function setExpandRowKeysAdapter(val) {
-      // 这里会触发额外的计算，但为了兼容性，暂时这么做
+      // 这里会触发额外的计算，但为了兼容性，时这么做
       this.setExpandRowKeys(val);
       this.updateTreeExpandKeys(val);
     },
@@ -57057,7 +57057,7 @@ exports.default = { use: use, t: t, i18n: i18n };
 
 "use strict";
 
-
+//Montón de cosas en chino
 exports.__esModule = true;
 exports.default = {
   el: {
@@ -57122,14 +57122,14 @@ exports.default = {
     select: {
       loading: '加载中',
       noMatch: '无匹配数据',
-      noData: '无数据',
+      noData: 'Sin datos',
       placeholder: '请选择'
     },
     cascader: {
       noMatch: '无匹配数据',
       loading: '加载中',
       placeholder: '请选择',
-      noData: '暂无数据'
+      noData: 'Sin datos'
     },
     pagination: {
       goto: '前往',
@@ -57150,18 +57150,18 @@ exports.default = {
       continue: '继续上传'
     },
     table: {
-      emptyText: '暂无数据',
+      emptyText: 'Sin datos',
       confirmFilter: '筛选',
       resetFilter: '重置',
       clearFilter: '全部',
       sumText: '合计'
     },
     tree: {
-      emptyText: '暂无数据'
+      emptyText: 'Sin datos'
     },
     transfer: {
       noMatch: '无匹配数据',
-      noData: '无数据',
+      noData: 'Sin datos',
       titles: ['列表 1', '列表 2'],
       filterPlaceholder: '请输入搜索内容',
       noCheckedFormat: '共 {total} 项',

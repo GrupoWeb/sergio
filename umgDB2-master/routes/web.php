@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Aquí se pueden crear nuevas rutas
 
 Route::get('/', 'Auth\LoginController@showLoginForm');
 
@@ -22,7 +22,9 @@ Route::post('tables','controllerUmg@getTables');
 Route::post('culmnas','controllerUmg@getColumns');
 Route::post('ejecutarSQL','controllerUmg@ejecutarSQL');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::get('dml','controllerUmg@dml');
+//Creados
+//Route::get('dml','controllerUmg@dml');
+Route::get('grupo','controllerUmg@grupo');
 
 Auth::routes();
 

@@ -124,4 +124,8 @@ class controllerUmg extends Controller
         
     }
 
+    public function grupo(){
+        return view('grupo.index');
+        //return 1;
+    }
 }
