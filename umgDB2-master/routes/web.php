@@ -22,8 +22,10 @@ Route::post('tables','controllerUmg@getTables');
 Route::post('culmnas','controllerUmg@getColumns');
 Route::post('ejecutarSQL','controllerUmg@ejecutarSQL');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 //Creados
-//Route::get('dml','controllerUmg@dml');
+Route::get('manipulacion','controllerUmg@getDml')->name("manipulacion");
+Route::post('manipulacion','controllerUmg@dml');
 Route::get('grupo','controllerUmg@grupo');
 
 Auth::routes();

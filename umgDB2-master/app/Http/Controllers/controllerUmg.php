@@ -102,12 +102,13 @@ class controllerUmg extends Controller
         return response()->json($resultado, 200);
     }
 
-    public function  dml(){
-        $conexionSQL = $this->conexionInformationSchema("prueba");
+    public function  dml(Request $request){
+        $conexionSQL = $this->conexionInformationSchema($request->base);
         
         try {
             DB::beginTransaction();
-            $sql = 'insert into pruebad (nombres) values("prueba")';
+            // $sql = 'insert into pruebad (nombres) values("prueba")';
+            $sql = $request->sql;
         
             $data2 = DB::statement($sql);
 
@@ -123,6 +124,10 @@ class controllerUmg extends Controller
 
         
     }
+
+    public function getDml(){
+        return view ('menu.manipulacion')
+;    }
 
     public function grupo(){
         return view('grupo.index');

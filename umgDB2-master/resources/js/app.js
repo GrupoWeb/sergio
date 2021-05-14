@@ -10,6 +10,9 @@ window.Vue = require('vue');
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/en'
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 /**
  * The following block of code may be used to automatically register your
@@ -22,10 +25,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.use(ElementUI);
+Vue.use(ElementUI, { locale });
+Vue.use(VueSweetalert2);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('select-component', require('./components/menu/recuperacion.vue').default);
+Vue.component('manipulacion-component', require('./components/menu/manipulacion.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

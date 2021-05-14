@@ -17,7 +17,7 @@
                              </li>
                              <li class="nav">
                                  <!-- <Aquí se envia a DML"> -->
-                                 <a class="nav-link" href="/DML">
+                                 <a class="nav-link" href="{{ route('manipulacion') }}">
                                      <i class="nav-icon fas far fa-user"></i> Manipulación de Datos (DML)</a>
                              </li>
                              <li class="nav">

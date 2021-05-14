@@ -22,7 +22,7 @@
                     </el-col>
                     <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12"  :offset="0">
                         <el-form-item label="Seleccionar Tabla">
-                         <el-select v-model="form.tabla" value-key="" placeholder="" clearable filterable class="select" @change="getColumn">
+                         <el-select v-model="form.tabla" value-key="" placeholder="" clearable filterable class="select" @change="getColumn" no-data-text="Sin datos">
                                 <el-option v-for="item in  this.API.list.tables 
 "
                                     :key="item.table_name"
@@ -304,6 +304,15 @@ export default {
             //         });
             //     }
             //     });
+            })
+            .catch(err => {
+                this.$swal({
+                position: "top-end",
+                icon: "error",
+                title: "Consulta no se genero por falta de datos",
+                showConfirmButton: false,
+                timer: 2500,
+                });
             })
         },
         getConection () {
