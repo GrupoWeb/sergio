@@ -105,21 +105,21 @@ class controllerUmg extends Controller
     public function  dml(Request $request){
         $conexionSQL = $this->conexionInformationSchema($request->base);
         
-        try {
-            DB::beginTransaction();
+        // try {
+        //     DB::beginTransaction();
             // $sql = 'insert into pruebad (nombres) values("prueba")';
             $sql = $request->sql;
         
             $data2 = DB::statement($sql);
 
-            DB::commit();
+            // DB::commit();
             return response()->json($data2,200);
 
-        } catch (\Throwable $th) {
-            DB::rollback();
-            return response()->json("SQL mal formado",200);
+        // } catch (\Throwable $th) {
+        //     DB::rollback();
+        //     return response()->json(false,200);
 
-        }
+        // }
               
 
         

@@ -3710,18 +3710,28 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         console.log(response);
 
-        _this4.$swal({
-          position: "top-end",
-          icon: "success",
-          title: "Sentencia ejecutada con exito!",
-          showConfirmButton: false,
-          timer: 2500
-        });
+        if (response) {
+          _this4.$swal({
+            position: "top-end",
+            icon: "success",
+            title: "Sentencia ejecutada con exito!",
+            showConfirmButton: false,
+            timer: 2500
+          });
 
-        _this4.API.form.base = "";
-        _this4.API.form.sql = "";
-        _this4.API.handler.area = false;
-        _this4.API.handler.info = false;
+          _this4.API.form.base = "";
+          _this4.API.form.sql = "";
+          _this4.API.handler.area = false;
+          _this4.API.handler.info = false;
+        } else {
+          _this4.$swal({
+            position: "top-end",
+            icon: "error",
+            title: "SQL mal formado",
+            showConfirmButton: false,
+            timer: 2500
+          });
+        }
       })["catch"](function (err) {
         console.log(err);
 

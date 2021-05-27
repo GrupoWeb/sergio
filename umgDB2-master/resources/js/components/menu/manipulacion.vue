@@ -135,18 +135,29 @@ export default {
             })
             .then(response => {
                 console.log(response)
-                                this.$swal({
-                position: "top-end",
-                icon: "success",
-                title: "Sentencia ejecutada con exito!",
-                showConfirmButton: false,
-                timer: 2500,
-                });
-                this.API.form.base = ""
-                this.API.form.sql = ""
-                this.API.handler.area = false
-                this.API.handler.info = false
-            } )
+                if(response){
+                    this.$swal({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Sentencia ejecutada con exito!",
+                        showConfirmButton: false,
+                        timer: 2500,
+                        });
+                        this.API.form.base = ""
+                        this.API.form.sql = ""
+                        this.API.handler.area = false
+                        this.API.handler.info = false
+
+                }else{
+                    this.$swal({
+                    position: "top-end",
+                    icon: "error",
+                    title: "SQL mal formado",
+                    showConfirmButton: false,
+                    timer: 2500,
+                    });
+                }
+             })
             .catch(err => {
                 console.log(err)
                                 this.$swal({
