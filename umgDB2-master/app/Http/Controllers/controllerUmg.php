@@ -110,7 +110,7 @@ class controllerUmg extends Controller
             // $sql = 'insert into pruebad (nombres) values("prueba")';
             $sql = $request->sql;
         
-            $data2 = $conexionSQL->select($sql);
+            $data2 = $conexionSQL->statement($sql);
             // $data2 = DB::statement($sql);
 
             // DB::commit();
