@@ -9,7 +9,7 @@ spec:
   capacity:
     storage: 10Gi
   accessModes:
-    - StatefulSet
+    - ReadWriteOnce
   nfs:
     server: 168.232.79.90
     path: "/home/sergio/umgDB2-master"
@@ -22,7 +22,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - StatefulSet
+    - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
