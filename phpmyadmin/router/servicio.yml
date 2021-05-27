@@ -115,7 +115,7 @@ spec:
     spec:
       storageClassName: openebs-hostpath
       accessModes:
-      - ReadWriteOnce
+      - StatefulSet
       resources:
         requests:
           storage: 20Gi

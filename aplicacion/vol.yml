@@ -1,31 +1,31 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mysql-pv-claim
+  name: semestre-volumen
   labels:
-    mysql: ready
+    semestre: ready
 spec:
   storageClassName: manual
   capacity:
     storage: 10Gi
   accessModes:
-    - ReadWriteOnce
+    - StatefulSet
   nfs:
     server: 168.232.79.90
-    path: "/home/db"
+    path: "/home/sergio/umgDB2-master"
 
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pv-claim
+  name: semestre-volumen
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - StatefulSet
   resources:
     requests:
       storage: 10Gi
   selector:
     matchLabels:
-      mysql: ready
+      semestre: ready

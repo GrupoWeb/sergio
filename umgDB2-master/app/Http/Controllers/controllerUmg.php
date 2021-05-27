@@ -133,4 +133,9 @@ class controllerUmg extends Controller
         return view('grupo.index');
         //return 1;
     }
+
+    public function TCL(){
+        return view('grupo.tcl');
+        //return 1;
+    }
 }

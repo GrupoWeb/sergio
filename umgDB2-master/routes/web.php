@@ -27,6 +27,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('manipulacion','controllerUmg@getDml')->name("manipulacion");
 Route::post('manipulacion','controllerUmg@dml');
 Route::get('grupo','controllerUmg@grupo');
+Route::get('TCL','controllerUmg@TCL');
 
 Auth::routes();
 

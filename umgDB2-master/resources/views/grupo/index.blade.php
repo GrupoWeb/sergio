@@ -111,7 +111,7 @@
     <script>
     function phpmyadmin() {
         //location.href='http://168.232.79.90:32083/';
-        window.open('http://168.232.79.90:32083', '_blank');
+        window.open('http://168.232.79.90:31699', '_blank');
     }
     function Kubernetes() {
         //location.href='https://168.232.79.90:32502';

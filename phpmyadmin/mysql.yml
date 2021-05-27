@@ -18,7 +18,7 @@ spec:
   capacity:
     storage: 10Gi
   accessModes:
-    - ReadWriteOnce
+    - StatefulSet
   nfs:
     server: 168.232.79.90
     path: "/home/db"
@@ -31,7 +31,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+    - StatefulSet
   resources:
     requests:
       storage: 1Gi
@@ -46,7 +46,7 @@ metadata:
   labels:
     app: mysql
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: mysql

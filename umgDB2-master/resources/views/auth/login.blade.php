@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center mt-1">
         <div class="col-md-5 ">
-            <img src="{{asset('img/logo.png')}}" class="card-img-top " width="150" height =" 400" alt="">
+            <img src="{{asset('img/logo.png')}}" class="card-img-top " width="" height ="" alt="">
             <div class="card">
                 <div class="card-header color_institucional text-white">{{ __('Ingreso al Sistema') }}</div>
                 <div class="card-body">
