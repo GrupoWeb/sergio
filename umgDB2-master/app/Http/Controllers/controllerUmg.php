@@ -132,11 +132,17 @@ class controllerUmg extends Controller
 
     public function grupo(){
         return view('grupo.index');
-        //return 1;
     }
 
     public function TCL(){
         return view('grupo.tcl');
-        //return 1;
+    }
+
+    public function DDL(){
+        return view('grupo.ddl');
+    }
+
+    public function DCL(){
+        return view('grupo.dcl');
     }
 }

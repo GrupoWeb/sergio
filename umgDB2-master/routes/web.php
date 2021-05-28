@@ -28,6 +28,9 @@ Route::get('manipulacion','controllerUmg@getDml')->name("manipulacion");
 Route::post('manipulacion','controllerUmg@dml');
 Route::get('grupo','controllerUmg@grupo');
 Route::get('TCL','controllerUmg@TCL');
+Route::get('DDL','controllerUmg@DDL');
+Route::get('DCL','controllerUmg@DCL');
+
 
 Auth::routes();
 

@@ -27,23 +27,23 @@
                     <td>Sergio René Gutiérrez Medina</td>
                     <td>sgutierrezm1@miumg.edu.gt</td>
                     </tr>
-                    <tr>
                     <th scope="row">3</th>
+                    <td>3190-15-8083</td>
+                    <td>Ruth Bellanira Hernandez Carpio</td>
+                    <td>rhernandezc10@miumg.edu.gt</td>
+                    <tr>
+                    <th scope="row">4</th>
                     <td>3190-15-21575</td>
                     <td>Cristian Roca Gómez </td>
                     <td>crocag1@miumg.edu.gt</td>
                     </tr>
                     <tr>
-                    <th scope="row">4</th>
+                    <th scope="row">5</th>
                     <td>3190-15-2711</td>
                     <td>Francisco Alejandro Barrios Meléndez</td>
                     <td>fbarriosm3@miumg.edu.gt</td>
                     </tr>
                     <tr>
-                    <th scope="row">5</th>
-                    <td>3190-15-8083</td>
-                    <td>Ruth Bellanira Hernandez Carpio</td>
-                    <td>rhernandezc10@miumg.edu.gt</td>
                     </tr>
                     <tr>
                     <th scope="row">6</th>
@@ -110,15 +110,12 @@
 
     <script>
     function phpmyadmin() {
-        //location.href='http://168.232.79.90:32083/';
         window.open('http://168.232.79.90:31699', '_blank');
     }
     function Kubernetes() {
-        //location.href='https://168.232.79.90:32502';
         window.open('https://168.232.79.90:32502', '_blank');
     }
     function Vuejs() {
-        //location.href='https://168.232.79.90:32502';
         window.open('https://es.vuejs.org/v2/guide/', '_blank');
     }
     </script>
