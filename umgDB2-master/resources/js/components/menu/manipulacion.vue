@@ -137,7 +137,6 @@ export default {
                 console.log(response)
                 if(response){
                     this.$swal({
-                        position: "top-end",
                         icon: "success",
                         title: "Sentencia ejecutada con exito!",
                         showConfirmButton: false,
@@ -150,7 +149,6 @@ export default {
 
                 }else{
                     this.$swal({
-                    position: "top-end",
                     icon: "error",
                     title: "SQL mal formado",
                     showConfirmButton: false,
@@ -161,7 +159,6 @@ export default {
             .catch(err => {
                 console.log(err)
                                 this.$swal({
-                position: "top-end",
                 icon: "error",
                 title: "SQL mal formado",
                 showConfirmButton: false,

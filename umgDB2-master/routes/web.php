@@ -16,6 +16,7 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Route::get ('dashboard','controllerUmg@index');
 
+
 Route::get('recuperacion','controllerUmg@showRecuperacion')->name('recuperacion');
 Route::get('conection','controllerUmg@getDatabases');
 Route::post('tables','controllerUmg@getTables');

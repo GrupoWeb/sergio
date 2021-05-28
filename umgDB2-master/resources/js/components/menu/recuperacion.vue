@@ -307,7 +307,6 @@ export default {
             })
             .catch(err => {
                 this.$swal({
-                position: "top-end",
                 icon: "error",
                 title: "Consulta no se genero por falta de datos",
                 showConfirmButton: false,
